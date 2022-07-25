@@ -1,0 +1,30 @@
+ <h1>Hello index<h2>
+
+<table class = "table  table-hover  table-bordered border-primary table align-middle">
+    <thead class = "table-dark">
+        <tr>
+            <th>Name:</th>
+            <th>Buy_year:</th>
+            <th>Number_plate:</th>
+            <th>Color:</th>
+        </tr>
+    </thead>
+
+    <% @cars.each do |car| %>
+
+    <tbody class = ".table-striped">
+        <tr>
+            <td><%= car.name %></td>
+            <td><%= car.buy_year%></td>
+            <td><%= car.number_plate%></td>
+            <td><%= car.color %></td>
+            <td><%= link_to "Edit", edit_car_path(car) ,class:"btn btn-info"%></td>
+            <td><%= link_to "show" , car_path(car) , class:"btn btn-warning" %></td>
+            <td><%= link_to "destroy" , car_path(car), data:{turbo_method: :delete ,turbo_confirm: "Are You Sure? "} ,class:"btn btn-danger"%></td>
+        </tr>
+    </tbody>
+    <% end %>
+
+</table>
+
+ <%= link_to "Enter New Car " , new_car_path , class:"btn btn-secondary"%>

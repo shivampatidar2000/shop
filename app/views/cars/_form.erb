@@ -1,0 +1,39 @@
+<%= form_with model: car do |com|%>
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"><b> <%= com.label :name%></b></label>
+       
+    <input class="form-control"  <%= com.text_field :name %>>
+  <% car.errors.full_messages_for(:name).each do |message|%>
+        <% massage %>
+        <% end %>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">  <%= com.label :buy_year %></label>
+    <input  class="form-control" <%= com.text_field :buy_year %>>
+     <% car.errors.full_messages_for(:buy_year).each do |message|%>
+        <% message %>
+        <% end %>
+  </div>
+
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">  <%= com.label :number_plate %></label>
+    <input  class="form-control" <%= com.text_field :number_plate %>>
+     <% car.errors.full_messages_for(:number_plate).each do |message|%>
+        <% message %>
+        <% end %>
+  </div>
+ 
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">  <%= com.label :color %></label>
+    <input  class="form-control" <%= com.text_field :color %>>
+     <% car.errors.full_messages_for(:color).each do |message|%>
+        <% message %>
+        <% end %>
+  </div>
+
+  <button type="submit" class="btn btn-primary"><%= com.submit %></button>
+<% end %>
+
+</form>
